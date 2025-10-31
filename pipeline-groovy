@@ -7,5 +7,14 @@ pipeline {
                 echo 'Hello, World!'
             }
         }
+        stage('Run Java Program') {
+            steps {
+                // Compile and run Java HelloWorld.java
+                sh '''
+                    javac HelloWorld.java
+                    java HelloWorld
+                '''
+            }
+        }
     }
 }
